@@ -30,7 +30,6 @@ export default function Combos({newRound}) {
       // add a duck only if more than 1 move left
       if (i > 0 && i < (thisRound-1)) {
         let shouldDuck = getRandom(2);
-        console.log(shouldDuck);
         if (shouldDuck > 0 && duckCount < 2) {
           combo.push(duck[getRandom(duck.length)]);
           duckCount = duckCount + 1;

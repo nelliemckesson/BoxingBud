@@ -14,7 +14,7 @@ function App() {
   let amt = main ? 120 : 30;
 
   const time = new Date();
-  time.setSeconds(time.getSeconds() + amt); // 2 minutes timer
+  time.setSeconds(time.getSeconds() + amt);
   return (
     <div className="App">
       <Timer expiryTimestamp={time} isMain={main} />
