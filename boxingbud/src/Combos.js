@@ -60,7 +60,7 @@ export default function Combos({newRound}) {
 	return (
     <div style={{fontSize: '60px'}}>
       {currcombo ? (
-        <div>{currcombo.map((item,i) => <p key={`move{i}`} className="move">{item}</p>)}</div>
+        <div>{currcombo.map((item,i) => <p key={`move${i}`} className="move">{item}</p>)}</div>
       ) : (
         <p>"Rest"</p>
       )}

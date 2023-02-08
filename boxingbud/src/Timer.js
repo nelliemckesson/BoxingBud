@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import { useTimer } from 'react-timer-hook';
 import Combos from './Combos.js';
+import Bell from './Bell.js';
 
 export default function Timer({expiryTimestamp, isMain}) {
   const [main, setMain] = useState(false);
@@ -45,7 +46,7 @@ export default function Timer({expiryTimestamp, isMain}) {
   return (
     <div className="container" style={{textAlign: 'center'}}>
       <div>
-        <div style={{fontSize: '100px', widtb: '350px'}}>
+        <div style={{fontSize: '100px', width: '350px'}}>
           <span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
         </div>
         <p>{isRunning ? 'Running' : 'Not running'}</p>
@@ -61,6 +62,7 @@ export default function Timer({expiryTimestamp, isMain}) {
           restart(time)
         }}>Restart</button>
         <p>Total time after this round: {total}</p>
+        <Bell newRound={main} />
       </div>
       <div>
         <Combos newRound={main} />
