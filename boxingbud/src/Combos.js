@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from "react";
+import refresh from './refresh.svg';
 
-export default function Combos({newRound}) {
+export default function Combos({newRound, started}) {
   const [currcombo, setCombo] = useState(["jab", "cross"]);
 
   const count = [2, 3, 4, 5];
@@ -48,18 +49,24 @@ export default function Combos({newRound}) {
   }
 
   useEffect(() => {
-    if (newRound == true) {
+    if (newRound == true && started == true) {
       let thisCombo = makeCombo();
       setCombo(thisCombo);
     } else {
       setCombo(["REST"]);
     }
-  }, [newRound]);
+  }, [newRound, started]);
 
 	return (
     <div style={{fontSize: '60px'}}>
       {currcombo ? (
-        <div>{currcombo.map((item,i) => <p key={`move${i}`} className="move">{item}</p>)}</div>
+        <div>
+          <div>{currcombo.map((item,i) => <p key={`move${i}`} className="move">{item}</p>)}</div>
+          <button className="flat" onClick={() => {
+            let newCombo = makeCombo();
+            setCombo(newCombo);
+          }}><img height="20px" width="20px" src={refresh} /></button>
+        </div>
       ) : (
         <p>"Rest"</p>
       )}

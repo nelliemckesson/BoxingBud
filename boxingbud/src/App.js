@@ -4,20 +4,12 @@ import './App.css';
 import Timer from './Timer.js';
 
 function App() {
-  // whether this is punch time or rest time
-  let [main, setMain] = useState(false);
-
-  const toggleMain = () => {
-    setMain(!main);
-  }
-
-  let amt = main ? 120 : 30;
-
+  // initial setup time
   const time = new Date();
-  time.setSeconds(time.getSeconds() + amt);
+  time.setSeconds(time.getSeconds() + 0);
   return (
     <div className="App">
-      <Timer expiryTimestamp={time} isMain={main} />
+      <Timer expiryTimestamp={time} />
     </div>
   );
 }
