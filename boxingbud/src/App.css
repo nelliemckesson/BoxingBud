@@ -43,6 +43,15 @@
   justify-content: center;
 }
 
+.timerInner button {
+  border-width: 0px;
+  border-radius: 3px;
+  padding: 5px 8px 5px 8px;
+  margin-right: 5px;
+  background-color: black;
+  color: white;
+}
+
 .counter {
   font-size: 100px;
   width: 350px;
@@ -59,6 +68,10 @@
 .text p {
   margin: 0;
   padding: 0;
+}
+
+.mobileText {
+  display: none;
 }
 
 .move {
@@ -85,6 +98,7 @@
   }
 
   .timerContainer {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,10 +106,13 @@
   }
 
   .timerInner {
+    width: 100%;
+    padding: 2px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    background-color: yellow;
   }
 
   .counter {
@@ -108,13 +125,22 @@
   }
 
   .text {
-    margin-bottom: 10px;
+    display: none;
   }
 
-  .text p {
+  .mobileText p {
     font-size: 0.8em;
     margin: 0;
     padding: 0;
+  }
+
+  .mobileText {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .total {
+    font-size: 0.8em;
   }
 
   .move {
@@ -122,13 +148,20 @@
   }
 
   .feedback {
-    font-style: italic;
-    font-size: 0.9em;
+    display: none;
+  }
+
+  .mobileText .feedback {
+    display: block;
   }
 
   .flat {
     border-width: 0px;
     background-color: transparent;
+  }
+
+  p.status {
+    display: none;
   }
 }
 

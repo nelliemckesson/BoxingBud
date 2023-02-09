@@ -59,7 +59,7 @@ export default function Timer({expiryTimestamp}) {
           <div className="counter">
             <span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
           </div>
-          <p>{isRunning && started ? 'Running' : 'Not running'}</p>
+          <p className="status">{isRunning && started ? 'Running' : 'Not running'}</p>
           <div>
             <button onClick={() => {
               if (started == false) {
@@ -78,8 +78,8 @@ export default function Timer({expiryTimestamp}) {
               restart(time)
             }}>Restart</button>
           </div>
-          <p>Total time after this round: {getTotal(total)}</p>
         </div>
+        <p className="total">Total time after this round: {getTotal(total)}</p>
         <p className="feedback">
           Got an idea for how to make this better? 
           <a href="https://github.com/nelliemckesson/BoxingBud/issues"> Submit it here</a>
@@ -88,6 +88,15 @@ export default function Timer({expiryTimestamp}) {
       </div>
       <div>
         <Combos newRound={main} started={started} />
+      </div>
+      <div className="mobileText">
+        <p>This app creates random boxing punch combos.</p>
+        <p>Each combo runs for 2 minutes, followed by a 30 second break.</p>
+        <p>I am not a doctor; punch at your own risk!</p>
+        <p className="feedback">
+          Got an idea for how to make this better? 
+          <a href="https://github.com/nelliemckesson/BoxingBud/issues"> Submit it here</a>
+        </p>
       </div>
     </div>
   );
