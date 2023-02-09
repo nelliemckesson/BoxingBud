@@ -58,7 +58,7 @@ export default function Combos({newRound, started}) {
   }, [newRound, started]);
 
 	return (
-    <div style={{fontSize: '60px'}}>
+    <div className="combolist">
       {currcombo ? (
         <div>
           <div>{currcombo.map((item,i) => <p key={`move${i}`} className="move">{item}</p>)}</div>

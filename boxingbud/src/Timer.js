@@ -55,29 +55,31 @@ export default function Timer({expiryTimestamp}) {
           <p>Each combo runs for 2 minutes, followed by a 30 second break.</p>
           <p>I am not a doctor; punch at your own risk!</p>
         </div>
-        <div style={{fontSize: '100px', width: '350px'}}>
-          <span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
-        </div>
-        <p>{isRunning && started ? 'Running' : 'Not running'}</p>
-        <div>
-          <button onClick={() => {
-            if (started == false) {
-              setStarted(true);
+        <div className="timerInner">
+          <div className="counter">
+            <span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
+          </div>
+          <p>{isRunning && started ? 'Running' : 'Not running'}</p>
+          <div>
+            <button onClick={() => {
+              if (started == false) {
+                setStarted(true);
+                setMain(false);
+              };
+            }}>Go!</button>
+            <button onClick={pause}>Pause</button>
+            <button onClick={resume}>Resume</button>
+            <button onClick={() => {
+              // Restarts to 2 minutes timer
+              setTotal(30);
               setMain(false);
-            };
-          }}>Go!</button>
-          <button onClick={pause}>Pause</button>
-          <button onClick={resume}>Resume</button>
-          <button onClick={() => {
-            // Restarts to 2 minutes timer
-            setTotal(30);
-            setMain(false);
-            const time = new Date();
-            time.setSeconds(time.getSeconds() + 30);
-            restart(time)
-          }}>Restart</button>
+              const time = new Date();
+              time.setSeconds(time.getSeconds() + 30);
+              restart(time)
+            }}>Restart</button>
+          </div>
+          <p>Total time after this round: {getTotal(total)}</p>
         </div>
-        <p>Total time after this round: {getTotal(total)}</p>
         <p className="feedback">
           Got an idea for how to make this better? 
           <a href="https://github.com/nelliemckesson/BoxingBud/issues"> Submit it here</a>
