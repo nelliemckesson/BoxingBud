@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/BoxingBud/static/css/main.b4e370b7.css",
-    "main.js": "/BoxingBud/static/js/main.f8c8d973.js",
+    "main.css": "/BoxingBud/static/css/main.0c1fc36e.css",
+    "main.js": "/BoxingBud/static/js/main.37d24453.js",
     "static/js/787.31f153c3.chunk.js": "/BoxingBud/static/js/787.31f153c3.chunk.js",
     "static/media/stop.mp3": "/BoxingBud/static/media/stop.100127efa709433f07f5.mp3",
     "static/media/start.mp3": "/BoxingBud/static/media/start.58e5230f3ff3d7f4485b.mp3",
     "static/media/logo.svg": "/BoxingBud/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/refresh.svg": "/BoxingBud/static/media/refresh.4e8f11cd118afd59dc2105ec883711d1.svg",
     "index.html": "/BoxingBud/index.html",
-    "main.b4e370b7.css.map": "/BoxingBud/static/css/main.b4e370b7.css.map",
-    "main.f8c8d973.js.map": "/BoxingBud/static/js/main.f8c8d973.js.map",
+    "main.0c1fc36e.css.map": "/BoxingBud/static/css/main.0c1fc36e.css.map",
+    "main.37d24453.js.map": "/BoxingBud/static/js/main.37d24453.js.map",
     "787.31f153c3.chunk.js.map": "/BoxingBud/static/js/787.31f153c3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4e370b7.css",
-    "static/js/main.f8c8d973.js"
+    "static/css/main.0c1fc36e.css",
+    "static/js/main.37d24453.js"
   ]
 }
