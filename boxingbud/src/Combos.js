@@ -48,6 +48,20 @@ export default function Combos({newRound, started}) {
     return combo;
   }
 
+  const refreshCombo = () => {
+    let newCombo = makeCombo();
+    setCombo(newCombo);
+  }
+
+  useEffect(() => {
+    window.addEventListener('keydown', e => {
+      console.log(e);
+      if (e.key === 'Enter') {
+       refreshCombo();
+      }
+    });
+  });
+
   useEffect(() => {
     if (newRound == true && started == true) {
       let thisCombo = makeCombo();
@@ -62,10 +76,13 @@ export default function Combos({newRound, started}) {
       {currcombo ? (
         <div>
           <div>{currcombo.map((item,i) => <p key={`move${i}`} className="move">{item}</p>)}</div>
-          <button className="flat" onClick={() => {
-            let newCombo = makeCombo();
-            setCombo(newCombo);
-          }}><img height="20px" width="20px" src={refresh} /></button>
+          <button 
+            className="flat" 
+            onClick={() => refreshCombo()}
+          >
+            <img height="20px" width="20px" src={refresh} />
+          </button>
+          <p className="feedback">Or press the Enter key</p>
         </div>
       ) : (
         <p>"Rest"</p>
